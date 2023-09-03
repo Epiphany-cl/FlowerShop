@@ -80,7 +80,7 @@
                 <div class="col-lg-12">
                     <div class="ltn__checkout-inner">
                         <div class="ltn__checkout-single-content mt-50">
-                            <h4 class="title-2">Billing Details</h4>
+                            <h4 class="title-2">账单详情</h4>
                             <div class="ltn__checkout-single-content-info">
                                 <form action="#">
                                     <h6>个人信息</h6>
@@ -170,7 +170,11 @@
                             <p>
                                 您的个人数据将用于处理您的订单，支持您在本网站上的体验，以及其他在我们的隐私政策中描述的目的。</p>
                         </div>
-                        <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">提交订单</button>
+                        <button onclick="submitOrder()"
+                                class="btn theme-btn-1 btn-effect-1 text-uppercase"
+                                type="submit">
+                            提交订单
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-6">

@@ -1,158 +1,158 @@
 package bean;
 
 public class Order {
-    private String order_id;
-    private String order_username;
-    private String order_phone;
-    private String order_nation;
-    private String order_address;
-    private Integer order_paymentMode;
-    private Double order_priceTotal;
-    private Integer user_id;
+    private String orderId;
+    private String orderUsername;
+    private String orderPhone;
+    private String orderNation;
+    private String orderAddress;
+    private String orderPaymentMode;
+    private Double orderPriceTotal;
+    private Integer userId;
     private String state;
 
 
     public Order() {
     }
 
-    public Order(String order_id, String order_username, String order_phone, String order_nation, String order_address, Integer order_paymentMode, Double order_priceTotal, Integer user_id, String state) {
-        this.order_id = order_id;
-        this.order_username = order_username;
-        this.order_phone = order_phone;
-        this.order_nation = order_nation;
-        this.order_address = order_address;
-        this.order_paymentMode = order_paymentMode;
-        this.order_priceTotal = order_priceTotal;
-        this.user_id = user_id;
+    public Order(String orderId, String orderUsername, String orderPhone, String orderNation, String orderAddress, String orderPaymentMode, Double orderPriceTotal, Integer userId, String state) {
+        this.orderId = orderId;
+        this.orderUsername = orderUsername;
+        this.orderPhone = orderPhone;
+        this.orderNation = orderNation;
+        this.orderAddress = orderAddress;
+        this.orderPaymentMode = orderPaymentMode;
+        this.orderPriceTotal = orderPriceTotal;
+        this.userId = userId;
         this.state = state;
     }
 
     /**
      * 获取
-     * @return order_id
+     * @return orderId
      */
-    public String getOrder_id() {
-        return order_id;
+    public String getOrderId() {
+        return orderId;
     }
 
     /**
      * 设置
-     * @param order_id
+     * @param orderId
      */
-    public void setOrder_id(String order_id) {
-        this.order_id = order_id;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     /**
      * 获取
-     * @return order_username
+     * @return orderUsername
      */
-    public String getOrder_username() {
-        return order_username;
+    public String getOrderUsername() {
+        return orderUsername;
     }
 
     /**
      * 设置
-     * @param order_username
+     * @param orderUsername
      */
-    public void setOrder_username(String order_username) {
-        this.order_username = order_username;
+    public void setOrderUsername(String orderUsername) {
+        this.orderUsername = orderUsername;
     }
 
     /**
      * 获取
-     * @return order_phone
+     * @return orderPhone
      */
-    public String getOrder_phone() {
-        return order_phone;
+    public String getOrderPhone() {
+        return orderPhone;
     }
 
     /**
      * 设置
-     * @param order_phone
+     * @param orderPhone
      */
-    public void setOrder_phone(String order_phone) {
-        this.order_phone = order_phone;
+    public void setOrderPhone(String orderPhone) {
+        this.orderPhone = orderPhone;
     }
 
     /**
      * 获取
-     * @return order_nation
+     * @return orderNation
      */
-    public String getOrder_nation() {
-        return order_nation;
+    public String getOrderNation() {
+        return orderNation;
     }
 
     /**
      * 设置
-     * @param order_nation
+     * @param orderNation
      */
-    public void setOrder_nation(String order_nation) {
-        this.order_nation = order_nation;
+    public void setOrderNation(String orderNation) {
+        this.orderNation = orderNation;
     }
 
     /**
      * 获取
-     * @return order_address
+     * @return orderAddress
      */
-    public String getOrder_address() {
-        return order_address;
+    public String getOrderAddress() {
+        return orderAddress;
     }
 
     /**
      * 设置
-     * @param order_address
+     * @param orderAddress
      */
-    public void setOrder_address(String order_address) {
-        this.order_address = order_address;
+    public void setOrderAddress(String orderAddress) {
+        this.orderAddress = orderAddress;
     }
 
     /**
      * 获取
-     * @return order_paymentMode
+     * @return orderPaymentMode
      */
-    public Integer getOrder_paymentMode() {
-        return order_paymentMode;
+    public String getOrderPaymentMode() {
+        return orderPaymentMode;
     }
 
     /**
      * 设置
-     * @param order_paymentMode
+     * @param orderPaymentMode
      */
-    public void setOrder_paymentMode(Integer order_paymentMode) {
-        this.order_paymentMode = order_paymentMode;
+    public void setOrderPaymentMode(String orderPaymentMode) {
+        this.orderPaymentMode = orderPaymentMode;
     }
 
     /**
      * 获取
-     * @return order_priceTotal
+     * @return orderPriceTotal
      */
-    public Double getOrder_priceTotal() {
-        return order_priceTotal;
+    public Double getOrderPriceTotal() {
+        return orderPriceTotal;
     }
 
     /**
      * 设置
-     * @param order_priceTotal
+     * @param orderPriceTotal
      */
-    public void setOrder_priceTotal(Double order_priceTotal) {
-        this.order_priceTotal = order_priceTotal;
+    public void setOrderPriceTotal(Double orderPriceTotal) {
+        this.orderPriceTotal = orderPriceTotal;
     }
 
     /**
      * 获取
-     * @return user_id
+     * @return userId
      */
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
     /**
      * 设置
-     * @param user_id
+     * @param userId
      */
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**
@@ -172,6 +172,6 @@ public class Order {
     }
 
     public String toString() {
-        return "Order{order_id = " + order_id + ", order_username = " + order_username + ", order_phone = " + order_phone + ", order_nation = " + order_nation + ", order_address = " + order_address + ", order_paymentMode = " + order_paymentMode + ", order_priceTotal = " + order_priceTotal + ", user_id = " + user_id + ", state = " + state + "}";
+        return "Order{orderId = " + orderId + ", orderUsername = " + orderUsername + ", orderPhone = " + orderPhone + ", orderNation = " + orderNation + ", orderAddress = " + orderAddress + ", orderPaymentMode = " + orderPaymentMode + ", orderPriceTotal = " + orderPriceTotal + ", userId = " + userId + ", state = " + state + "}";
     }
 }

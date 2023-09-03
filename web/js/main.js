@@ -54,6 +54,8 @@
 51. 快速查看状态下添加一个或多个到购物车
 54. cart.js 购物车商品的加减
 55. cart.js 点击图片和名字进入详情页
+56. 结账 购物车信息的打印
+57. Order.jsp 提交订单
 
 
 
@@ -1846,7 +1848,6 @@ $(function () {
 
                 for (let i = 0; i < msg.length; i++) {
                     let cartItem = msg[i];
-                    console.log(cartItem);
                     $tbodyObj.append(
                         '<tr>\n' +
                         '    <td>' + cartItem.flowerName + ' <strong>× ' + cartItem.flowerNumber + '</strong></td>\n' +
@@ -1883,3 +1884,27 @@ $(function () {
         );
     }
 });
+
+/* --------------------------------------------------------
+    57. Order.jsp 提交订单
+-------------------------------------------------------- */
+function submitOrder() {
+    let name = $(".input-item.input-item-name.ltn__custom-icon input").val();
+    let phone = $(".input-item.input-item-phone.ltn__custom-icon input").val();
+    let country = $(".col-lg-4.col-md-6 select").val();
+    let address = $(".input-item.input-item-textarea.ltn__custom-icon textarea").val();
+    let paymentMethod = $("[aria-expanded=true]").text().trim();
+    let priceTotal = $(".shoping-cart-total.mt-50 strong:last").text().substring(1);
+
+    $.post(
+      "OrderServlet",
+      "method=submitOrder&name=" + name + "&phone=" + phone + "&country=" + country + "&address=" + address + "&paymentMethod=" + paymentMethod + "&priceTotal=" + priceTotal,
+      function (msg) {
+
+
+          alert(msg);
+          // window.location.href = "OrderSuccess.jsp";
+          window.location.href = "404.html";
+      }
+    );
+}
