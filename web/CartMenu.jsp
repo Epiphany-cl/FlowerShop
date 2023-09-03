@@ -27,7 +27,7 @@
         </div>
         <div class="btn-wrapper">
             <a href="cart.jsp" class="theme-btn-1 btn btn-effect-1">查看购物车</a>
-            <a href="cart.jsp" class="theme-btn-2 btn btn-effect-2">结账</a>
+            <a href="checkout.jsp" class="theme-btn-2 btn btn-effect-2">结账</a>
         </div>
         <p>订单满$100免费送货！</p>
     </div>
