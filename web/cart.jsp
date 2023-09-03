@@ -84,8 +84,10 @@
                             <table class="table">
                                 <tbody>
                                 <tr>
-                                    <td data-cartId="0" class="cart-product-remove">x</td>
-                                    <td data-flowerId="0" class="cart-product-image">
+                                    <input class="data-cartId" type="hidden" value="0">
+                                    <input class="data-flowerId" type="hidden" value="0">
+                                    <td class="cart-product-remove">x</td>
+                                    <td class="cart-product-image">
                                         <a href="product-details.jsp"><img src="img/product/1.png" alt="#"></a>
                                     </td>
                                     <td class="cart-product-info">

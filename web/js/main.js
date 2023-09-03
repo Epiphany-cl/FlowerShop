@@ -939,17 +939,28 @@
         $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
         $(".qtybutton").on("click", function () {
             var $button = $(this);
+
+            //myCode
+            let cartID = $button.parents("tr").find(".data-cartId").val();
+            console.log(cartID);
+
+
             var oldValue = $button.parent().find("input").val();
             if ($button.text() == "+") {
-                var newVal = parseFloat(oldValue) + 1;
+                // var newVal = parseFloat(oldValue) + 1;
+                //myCode
+                updateCartItemNum(cartID, 1);
             } else {
                 if (oldValue > 1) {
-                    var newVal = parseFloat(oldValue) - 1;
+                    // var newVal = parseFloat(oldValue) - 1;
+                    //myCode
+                    updateCartItemNum(cartID, -1);
                 } else {
-                    newVal = 1;
+                    // newVal = 1;
+                    $button.parent().find("input").val(1);
                 }
             }
-            $button.parent().find("input").val(newVal);
+            // $button.parent().find("input").val(newVal);
         });
 
 
@@ -1739,7 +1750,7 @@ function cartJsp_RefreshCartInfo() {
                 let totalPrice = 0;
                 let carriage = 15;
                 let sumPrice = 0;
-                
+
                 //遍历cartItem
                 for (let i = 0; i < msg.length; i++) {
                     let cartId = msg[i].cartId;
@@ -1752,8 +1763,10 @@ function cartJsp_RefreshCartInfo() {
                     totalPrice = totalPrice + flowerPrice * flowerNumber;
 
                     let $cloneTr = $initialTr.clone(true);
-                    $cloneTr.data("cartId", cartId);
-                    $cloneTr.data("flowerId", flowerId);
+
+                    $cloneTr.find(".data-cartId").val(cartId);
+                    $cloneTr.find(".data-flowerId").val(flowerId);
+
                     $cloneTr.find(".cart-product-info a").text(flowerName);
                     $cloneTr.find(".cart-product-image img").prop("src", flowerImgPath);
                     $cloneTr.find(".cart-product-quantity input").val(flowerNumber);
@@ -1765,7 +1778,6 @@ function cartJsp_RefreshCartInfo() {
                 }
                 $initialTr.remove();
 
-                console.log(totalPrice);
                 if (totalPrice >= 49) {
                     carriage = 0;
                 }
@@ -1795,3 +1807,11 @@ $(function () {
 /* --------------------------------------------------------
     54. cart.js 购物车商品的加减
 -------------------------------------------------------- */
+function updateCartItemNum(cartId, delta) {
+    $.post("CartServlet",
+        "method=updateCartItemNum&cartId=" + cartId + "&delta=" + delta,
+        function () {
+            cartJsp_RefreshCartInfo();
+        }
+    );
+}

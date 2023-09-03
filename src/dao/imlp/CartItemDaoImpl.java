@@ -50,7 +50,7 @@ public class CartItemDaoImpl extends BaseDao<CartItem> implements CartItemDao {
     @Override
     public List<CartItem> getCartItemByUserId(Integer userId) {
         return super.getBeanList(
-                "select * from t_cart_item where user_id = ?;",
+                "select * from t_cart_item where user_id = ? order by cart_id desc;",
                 userId
         );
     }

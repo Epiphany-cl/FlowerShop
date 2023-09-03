@@ -19,4 +19,13 @@ public class CartItemServiceImpl implements CartItemService {
     public void deleteCartItem(Integer cartItemId) {
         cartItemDao.deleteCartItemById(cartItemId);
     }
+
+    @Override
+    public void updateCartItemNum(Integer cartId,Integer delta) {
+        CartItem cartItem = cartItemDao.getCartItemById(cartId);
+        if (cartItem != null) {
+            cartItem.setFlowerNumber(cartItem.getFlowerNumber() + delta);
+        }
+        cartItemDao.updateCartItem(cartItem);
+    }
 }
