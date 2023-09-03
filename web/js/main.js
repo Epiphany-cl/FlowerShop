@@ -53,6 +53,7 @@
 50. shop-grid.jsp 点击图片和标题进入商品详情
 51. 快速查看状态下添加一个或多个到购物车
 54. cart.js 购物车商品的加减
+55. cart.js 点击图片和名字进入详情页
 
 
 
@@ -1738,7 +1739,6 @@ function cartJsp_RefreshCartInfo() {
     let username = $("#header_username");
     if (username[0]) {
 
-
         $.post("CartServlet",
             "method=findCartInfo",
             function (msg) {
@@ -1815,3 +1815,75 @@ function updateCartItemNum(cartId, delta) {
         }
     );
 }
+
+/* --------------------------------------------------------
+    55. cart.js 点击图片和名字进入详情页
+-------------------------------------------------------- */
+function cartJsp_productDetailView(a) {
+    let flowerId = $(a).parents("tr").find(".data-flowerId").val();
+    window.location.href = "product-details.jsp?flowerId=" + flowerId;
+}
+
+/* --------------------------------------------------------
+    56. 结账 购物车信息的打印
+-------------------------------------------------------- */
+$(function () {
+    const currentUrl = window.location.pathname;
+    if (currentUrl.includes("checkout.jsp")) {
+
+        let username = $("#header_username");
+        if (!username[0]) {
+            window.location.href = "login.jsp";
+        }
+
+        let $cartTotal = $(".shoping-cart-total.mt-50");
+        let $tbodyObj = $cartTotal.find("tbody");
+        $.post(
+            "CartServlet",
+            "method=findCartInfo",
+            function (msg) {
+                let sumPrice = 0;
+
+                for (let i = 0; i < msg.length; i++) {
+                    let cartItem = msg[i];
+                    console.log(cartItem);
+                    $tbodyObj.append(
+                        '<tr>\n' +
+                        '    <td>' + cartItem.flowerName + ' <strong>× ' + cartItem.flowerNumber + '</strong></td>\n' +
+                        '    <td>$' + (cartItem.flowerPrice * cartItem.flowerNumber).toFixed(2) + '</td>\n' +
+                        '</tr>'
+                    );
+                    sumPrice += cartItem.flowerPrice * cartItem.flowerNumber;
+                }
+
+                if (sumPrice > 49) {
+                    $tbodyObj.append(
+                        '<tr>\n' +
+                        '    <td>运输和手续费</td>\n' +
+                        '    <td>$0.00</td>\n' +
+                        '</tr>'
+                    );
+                } else {
+                    $tbodyObj.append(
+                        '<tr>\n' +
+                        '    <td>运输和手续费</td>\n' +
+                        '    <td>$15.00</td>\n' +
+                        '</tr>'
+                    );
+                    sumPrice += 15;
+                }
+
+                $tbodyObj.append(
+                    '<tr>\n' +
+                    '    <td><strong>订单总额</strong></td>\n' +
+                    '    <td><strong>$' + sumPrice.toFixed(2) + '</strong></td>\n' +
+                    '</tr>'
+                );
+            }
+        );
+    }
+});
+
+
+
+

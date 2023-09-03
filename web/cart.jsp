@@ -88,10 +88,10 @@
                                     <input class="data-flowerId" type="hidden" value="0">
                                     <td class="cart-product-remove">x</td>
                                     <td class="cart-product-image">
-                                        <a href="product-details.jsp"><img src="img/product/1.png" alt="#"></a>
+                                        <a onclick="cartJsp_productDetailView(this)" href="javascript:void(0)"><img src="img/product/1.png" alt="#"></a>
                                     </td>
                                     <td class="cart-product-info">
-                                        <h4><a href="product-details.jsp">99 red roses</a></h4>
+                                        <h4><a onclick="cartJsp_productDetailView(this)" href="javascript:void(0)">99 red roses</a></h4>
                                     </td>
                                     <td class="cart-product-price">$149.00</td>
                                     <td class="cart-product-quantity">
@@ -123,7 +123,7 @@
                                 </tbody>
                             </table>
                             <div class="btn-wrapper text-right">
-                                <a href="checkout.html" class="theme-btn-1 btn btn-effect-1">继续结账</a>
+                                <a href="checkout.jsp" class="theme-btn-1 btn btn-effect-1">继续结账</a>
                             </div>
                         </div>
                     </div>

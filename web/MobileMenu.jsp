@@ -31,7 +31,7 @@
                     <li><a href="product-details.jsp">商品详情</a></li>
                     <li><a href="cart.jsp">购物车</a></li>
                     <li><a href="wishlist.html">愿望清单</a></li>
-                    <li><a href="checkout.html">结账</a></li>
+                    <li><a href="checkout.jsp">结账</a></li>
                     <li><a href="order-tracking.html">订单追踪</a></li>
                     <li><a href="account.html">我的账户</a></li>
                     <li><a href="login.jsp">登录</a></li>

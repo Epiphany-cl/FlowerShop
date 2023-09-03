@@ -8,7 +8,7 @@
                     <div class="footer-menu">
                         <ul>
                             <li><a href="account.html">我的账户</a></li>
-                            <li><a href="checkout.html">结账</a></li>
+                            <li><a href="checkout.jsp">结账</a></li>
                             <li><a href="contact.html">联系我们</a></li>
                             <li><a href="cart.jsp">购物车</a></li>
                             <li><a href="wishlist.html">愿望清单</a></li>

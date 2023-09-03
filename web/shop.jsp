@@ -948,7 +948,7 @@
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="account.html">My account</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="checkout.jsp">Checkout</a></li>
                                     <li><a href="contact.html">Contact us</a></li>
                                     <li><a href="cart.jsp">Shopping Cart</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
@@ -1266,7 +1266,7 @@
                                                 <div class="btn-wrapper">
                                                     <a href="cart.jsp" class="theme-btn-1 btn btn-effect-1">View
                                                         Cart</a>
-                                                    <a href="checkout.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+                                                    <a href="checkout.jsp" class="theme-btn-2 btn btn-effect-2">Checkout</a>
                                                 </div>
                                             </div>
                                         </div>
