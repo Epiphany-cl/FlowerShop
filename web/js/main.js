@@ -938,34 +938,38 @@
         /* --------------------------------------------------------
             33. Quantity plus minus
         -------------------------------------------------------- */
+
         $(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
         $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
-        $(".qtybutton").on("click", function () {
+        $(".qtybutton").on("click", function() {
             var $button = $(this);
+            var oldValue = $button.parent().find("input").val();
 
             //myCode
             let cartID = $button.parents("tr").find(".data-cartId").val();
             console.log(cartID);
 
-
-            var oldValue = $button.parent().find("input").val();
             if ($button.text() == "+") {
-                // var newVal = parseFloat(oldValue) + 1;
+                var newVal = parseFloat(oldValue) + 1;
+
                 //myCode
                 updateCartItemNum(cartID, 1);
-            } else {
+
+            }
+            else {
                 if (oldValue > 1) {
-                    // var newVal = parseFloat(oldValue) - 1;
+                    var newVal = parseFloat(oldValue) - 1;
+
                     //myCode
                     updateCartItemNum(cartID, -1);
-                } else {
-                    // newVal = 1;
-                    $button.parent().find("input").val(1);
+                }
+                else {
+                    newVal = 1;
+
                 }
             }
-            // $button.parent().find("input").val(newVal);
+            $button.parent().find("input").val(newVal);
         });
-
 
         /* --------------------------------------------------------
             34. scrollUp active
@@ -1900,9 +1904,8 @@ function submitOrder() {
       "OrderServlet",
       "method=submitOrder&name=" + name + "&phone=" + phone + "&country=" + country + "&address=" + address + "&paymentMethod=" + paymentMethod + "&priceTotal=" + priceTotal,
       function (msg) {
-
-
           alert(msg);
+
           // window.location.href = "OrderSuccess.jsp";
           window.location.href = "404.html";
       }

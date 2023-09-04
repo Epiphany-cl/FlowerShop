@@ -9,6 +9,9 @@ public interface CartItemDao {
 
     int deleteCartItemById(Integer cartId);
 
+
+    int deleteCartItemByUserId(Integer userId);
+
     int updateCartItem(CartItem cartItem);
 
     CartItem getCartItemById(Integer cartId);

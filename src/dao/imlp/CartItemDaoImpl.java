@@ -28,6 +28,11 @@ public class CartItemDaoImpl extends BaseDao<CartItem> implements CartItemDao {
     }
 
     @Override
+    public int deleteCartItemByUserId(Integer userId) {
+        return super.update("delete from t_cart_item where user_id = ?", userId);
+    }
+
+    @Override
     public int updateCartItem(CartItem cartItem) {
         return super.update(
                 "update t_cart_item set flower_number = ?, flower_name = ?, flower_price = ?, flower_img_path = ? where cart_id = ?;",

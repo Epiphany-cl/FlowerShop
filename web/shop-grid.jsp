@@ -75,9 +75,7 @@
                     <div class="ltn__shop-options">
                         <ul>
                             <li>
-                                <div class="showing-product-number text-right">
-                                    <span>显示 20 个结果中的 8 个</span>
-                                </div>
+                                <div class="showing-product-number text-right"></div>
                             </li>
                             <li>
                                 <div class="short-by text-center">
