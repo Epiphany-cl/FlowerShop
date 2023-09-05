@@ -18,7 +18,6 @@ import java.util.UUID;
 public class OrderServiceImpl implements OrderService {
     private final OrderDao orderDao = new OrderDaoImpl();
     private final CartItemDao cartItemDao = new CartItemDaoImpl();
-
     private final OrderDetailDao orderDetailDao = new OrderDetailDaoImpl();
 
     /**
@@ -52,6 +51,11 @@ public class OrderServiceImpl implements OrderService {
         cartItemDao.deleteCartItemByUserId(order.getUserId());
 
         return randomId;
+    }
+
+    @Override
+    public Order findOrderById(String orderId) {
+        return orderDao.findOrderById(orderId);
     }
 
     //随机生成订单号

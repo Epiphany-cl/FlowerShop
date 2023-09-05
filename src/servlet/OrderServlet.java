@@ -26,7 +26,7 @@ public class OrderServlet extends BaseServlet {
         String orderPaymentMethod = req.getParameter("paymentMethod");
         double priceTotal = WebUtils.parseDouble(req.getParameter("priceTotal"), 0);
 
-        User user = (User)req.getSession().getAttribute("user");
+        User user = (User) req.getSession().getAttribute("user");
 
 
         Order order = new Order(
@@ -47,6 +47,23 @@ public class OrderServlet extends BaseServlet {
         String json = gson.toJson(orderId);
         resp.setContentType("application/json;charset=utf-8");
         resp.getWriter().write(json);
+    }
+
+    protected void findOrderById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String orderId = req.getParameter("orderId");
+        Order orderById = orderService.findOrderById(orderId);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(orderById);
+        resp.setContentType("application/json;charset=utf-8");
+        resp.getWriter().write(json);
+
+        //write(json)和print(json)的区别
+        /*
+         *  如果你希望以原始形式输出JSON，可以使用print。
+         *  如果你希望格式化JSON，使其更易于阅读，可以使用write并在写入之前对JSON进行格式化处理。
+         */
 
     }
 }
+

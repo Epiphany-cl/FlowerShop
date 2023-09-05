@@ -3,5 +3,7 @@ package dao;
 import bean.Order;
 
 public interface OrderDao {
-    void saveOrder(Order order);
+    public void saveOrder(Order order);
+
+    public Order findOrderById(String orderId);
 }

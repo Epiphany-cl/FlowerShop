@@ -134,13 +134,13 @@
                                                     <span>添加到购物车</span>
                                                 </a>
                                             </li>
-                                            <li>
+                                            <%--<li>
                                                 <a href="#" class="btn btn-effect-1 d-add-to-wishlist"
                                                    title="Add to Cart" data-toggle="modal"
                                                    data-target="#add_to_cart_modal">
                                                     <i class="icon-heart"></i>
                                                 </a>
-                                            </li>
+                                            </li>--%>
                                         </ul>
                                     </div>
                                     <div class="ltn__social-media mb-30">

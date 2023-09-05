@@ -20,4 +20,12 @@ public class OrderDaoImpl extends BaseDao<Order> implements OrderDao {
                 order.getState()
         );
     }
+
+    @Override
+    public Order findOrderById(String orderId) {
+        return super.getBean(
+                "select * from t_order where order_id = ?;",
+                orderId
+        );
+    }
 }

@@ -938,10 +938,9 @@
         /* --------------------------------------------------------
             33. Quantity plus minus
         -------------------------------------------------------- */
-
         $(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
         $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
-        $(".qtybutton").on("click", function() {
+        $(".qtybutton").on("click", function () {
             var $button = $(this);
             var oldValue = $button.parent().find("input").val();
 
@@ -955,15 +954,13 @@
                 //myCode
                 updateCartItemNum(cartID, 1);
 
-            }
-            else {
+            } else {
                 if (oldValue > 1) {
                     var newVal = parseFloat(oldValue) - 1;
 
                     //myCode
                     updateCartItemNum(cartID, -1);
-                }
-                else {
+                } else {
                     newVal = 1;
 
                 }
@@ -1901,13 +1898,41 @@ function submitOrder() {
     let priceTotal = $(".shoping-cart-total.mt-50 strong:last").text().substring(1);
 
     $.post(
-      "OrderServlet",
-      "method=submitOrder&name=" + name + "&phone=" + phone + "&country=" + country + "&address=" + address + "&paymentMethod=" + paymentMethod + "&priceTotal=" + priceTotal,
-      function (msg) {
-          alert(msg);
+        "OrderServlet",
+        "method=submitOrder&name=" + name + "&phone=" + phone + "&country=" + country + "&address=" + address + "&paymentMethod=" + paymentMethod + "&priceTotal=" + priceTotal,
+        function (msg) {
 
-          // window.location.href = "OrderSuccess.jsp";
-          window.location.href = "404.html";
-      }
+            window.location.href = "orderSubmitSuccess.jsp?orderId=" + msg;
+        }
+    );
+}
+
+/* --------------------------------------------------------
+    58. 订单提交成功界面
+-------------------------------------------------------- */
+$(function () {
+    let pathname = window.location.pathname;
+    if (pathname.includes("orderSubmitSuccess.jsp")) {
+        let params = new URLSearchParams(window.location.search);
+        let orderId = params.get("orderId");
+
+        refreshOrderInfo(orderId);
+    }
+});
+
+//刷新订单信息
+function refreshOrderInfo(orderId) {
+    $.post(
+        "OrderServlet",
+        "method=findOrderById&orderId=" + orderId,
+        function (msg) {
+            let order = msg;
+            let $orderInfo = $(".order-info");
+            $orderInfo.find(".order-id").text(orderId);
+            $orderInfo.find(".order-name").text(order.orderUsername);
+            $orderInfo.find(".order-phone").text(order.orderPhone);
+            $orderInfo.find(".order-address").text(order.orderAddress);
+            $orderInfo.find(".order-price-total").text("$" + order.orderPriceTotal.toFixed(2));
+        }
     );
 }
