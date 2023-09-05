@@ -58,6 +58,11 @@ public class OrderServiceImpl implements OrderService {
         return orderDao.findOrderById(orderId);
     }
 
+    @Override
+    public List<Order> findAllOrder(int userId) {
+        return orderDao.getAllOrder(userId);
+    }
+
     //随机生成订单号
     private static String generateOrderNumber() {
         // 生成一个UUID

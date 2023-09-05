@@ -4,6 +4,8 @@ import bean.Order;
 import dao.OrderDao;
 import utils.BaseDao;
 
+import java.util.List;
+
 public class OrderDaoImpl extends BaseDao<Order> implements OrderDao {
     @Override
     public void saveOrder(Order order) {
@@ -26,6 +28,14 @@ public class OrderDaoImpl extends BaseDao<Order> implements OrderDao {
         return super.getBean(
                 "select * from t_order where order_id = ?;",
                 orderId
+        );
+    }
+
+    @Override
+    public List<Order> getAllOrder(int userId) {
+        return super.getBeanList(
+                "select * from t_order where user_id = ?;",
+                userId
         );
     }
 }

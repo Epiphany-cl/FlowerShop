@@ -56,6 +56,7 @@
 55. cart.js 点击图片和名字进入详情页
 56. 结账 购物车信息的打印
 57. Order.jsp 提交订单
+59. 我的订单界面
 
 
 
@@ -1936,3 +1937,36 @@ function refreshOrderInfo(orderId) {
         }
     );
 }
+
+/* --------------------------------------------------------
+    59. 我的订单界面
+-------------------------------------------------------- */
+$(function () {
+    let pathname = window.location.pathname;
+    console.log(pathname);
+    if (pathname.includes("myOrder.jsp")) {
+        $.post(
+            "OrderServlet",
+            "method=findAllOrder",
+            function (msg) {
+                let orders = msg;
+                let $ordersTable = $(".orders-table");
+                $ordersTable.html("");
+                for (let i = 0; i < orders.length; i++) {
+                    let order = orders[i];
+                    console.log(i);//会发现该网友会有两次加载 不知道为什么
+                    $ordersTable.append(
+                        '<tr class="order-info">\n' +
+                        '    <td class="order-id">'+order.orderId+'</td>\n' +
+                        '    <td class="order-name">'+order.orderUsername+'</td>\n' +
+                        '    <td class="order-phone">'+order.orderPhone+'</td>\n' +
+                        '    <td class="order-address">'+order.orderAddress+'</td>\n' +
+                        '    <td class="order-price-total">$'+order.orderPriceTotal+'</td>\n' +
+                        '    <td><a href="404.html">查看详情</a></td>\n' +
+                        '</tr>'
+                    );
+                }
+            }
+        );
+    }
+});

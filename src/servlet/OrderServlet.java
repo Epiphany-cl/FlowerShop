@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "OrderServlet", urlPatterns = "/OrderServlet")
 public class OrderServlet extends BaseServlet {
@@ -63,6 +64,17 @@ public class OrderServlet extends BaseServlet {
          *  如果你希望以原始形式输出JSON，可以使用print。
          *  如果你希望格式化JSON，使其更易于阅读，可以使用write并在写入之前对JSON进行格式化处理。
          */
+    }
+
+    protected void findAllOrder(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User user = (User)req.getSession().getAttribute("user");
+        Integer userId = user.getId();
+        List<Order> orderList = orderService.findAllOrder(userId);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(orderList);
+        resp.setContentType("application/json;charset=utf-8");
+        resp.getWriter().write(json);
 
     }
 }
