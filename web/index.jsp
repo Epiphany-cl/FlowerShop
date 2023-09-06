@@ -110,7 +110,7 @@
                                                     在时间的涟漪里。</p>
                                             </div>
                                             <div class="btn-wrapper animated">
-                                                <a href="shop.jsp" class="theme-btn-1 btn btn-round">立即购买</a>
+                                                <a href="shop-grid.jsp" class="theme-btn-1 btn btn-round">立即购买</a>
                                             </div>
                                         </div>
 
@@ -153,7 +153,7 @@
                                                     用花语述说，爱意无需言。</p>
                                             </div>
                                             <div class="btn-wrapper animated">
-                                                <a href="shop.jsp" class="theme-btn-1 btn btn-round">立即购买</a>
+                                                <a href="shop-grid.jsp" class="theme-btn-1 btn btn-round">立即购买</a>
                                             </div>
                                         </div>
                                     </div>
@@ -574,7 +574,7 @@
             <div class="col-md-12">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img">
-                        <a href="shop.jsp"><img src="img/banner/10.jpg" alt="Banner Image"></a>
+                        <a href="shop-grid.jsp"><img src="img/banner/10.jpg" alt="Banner Image"></a>
                     </div>
                 </div>
             </div>
@@ -599,7 +599,7 @@
             <div class="col-lg-12">
                 <div class="ltn__blog-item">
                     <div class="ltn__blog-img">
-                        <a href="blog-details.html"><img src="img/blog/1.jpg" alt="#"></a>
+                        <a href="404.html"><img src="img/blog/1.jpg" alt="#"></a>
                     </div>
                     <div class="ltn__blog-brief">
                         <div class="ltn__blog-meta">
@@ -616,7 +616,7 @@
                             </ul>
                         </div>
                         <h3 class="ltn__blog-title blog-title-line"><a
-                                href="blog-details.html">盛夏花海绽放：城市公园迎来多彩花卉季节</a></h3>
+                                href="404.html">盛夏花海绽放：城市公园迎来多彩花卉季节</a></h3>
                     </div>
                 </div>
             </div>
@@ -624,7 +624,7 @@
             <div class="col-lg-12">
                 <div class="ltn__blog-item">
                     <div class="ltn__blog-img">
-                        <a href="blog-details.html"><img src="img/blog/2.jpg" alt="#"></a>
+                        <a href="404.html"><img src="img/blog/2.jpg" alt="#"></a>
                     </div>
                     <div class="ltn__blog-brief">
                         <div class="ltn__blog-meta">
@@ -640,7 +640,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <h3 class="ltn__blog-title blog-title-line"><a href="blog-details.html">
+                        <h3 class="ltn__blog-title blog-title-line"><a href="404.html">
                             花艺大师在市中心举办展览，倾情演绎花与艺术的完美融合</a></h3>
                     </div>
                 </div>
@@ -649,7 +649,7 @@
             <div class="col-lg-12">
                 <div class="ltn__blog-item">
                     <div class="ltn__blog-img">
-                        <a href="blog-details.html"><img src="img/blog/3.jpg" alt="#"></a>
+                        <a href="404.html"><img src="img/blog/3.jpg" alt="#"></a>
                     </div>
                     <div class="ltn__blog-brief">
                         <div class="ltn__blog-meta">
@@ -666,7 +666,7 @@
                             </ul>
                         </div>
                         <h3 class="ltn__blog-title blog-title-line"><a
-                                href="blog-details.html">环保倡导：可持续种植技术助力打造绿色鲜花产业链</a></h3>
+                                href="404.html">环保倡导：可持续种植技术助力打造绿色鲜花产业链</a></h3>
                     </div>
                 </div>
             </div>
@@ -674,7 +674,7 @@
             <div class="col-lg-12">
                 <div class="ltn__blog-item">
                     <div class="ltn__blog-img">
-                        <a href="blog-details.html"><img src="img/blog/4.jpg" alt="#"></a>
+                        <a href="404.html"><img src="img/blog/4.jpg" alt="#"></a>
                     </div>
                     <div class="ltn__blog-brief">
                         <div class="ltn__blog-meta">
@@ -691,7 +691,7 @@
                             </ul>
                         </div>
                         <h3 class="ltn__blog-title blog-title-line"><a
-                                href="blog-details.html">浪漫求婚季：男子999朵玫瑰定制爱情宣言</a></h3>
+                                href="404.html">浪漫求婚季：男子999朵玫瑰定制爱情宣言</a></h3>
                     </div>
                 </div>
             </div>
@@ -699,7 +699,7 @@
             <div class="col-lg-12">
                 <div class="ltn__blog-item">
                     <div class="ltn__blog-img">
-                        <a href="blog-details.html"><img src="img/blog/5.jpg" alt="#"></a>
+                        <a href="404.html"><img src="img/blog/5.jpg" alt="#"></a>
                     </div>
                     <div class="ltn__blog-brief">
                         <div class="ltn__blog-meta">
@@ -716,7 +716,7 @@
                             </ul>
                         </div>
                         <h3 class="ltn__blog-title blog-title-line"><a
-                                href="blog-details.html">花博会开幕：百余品种花卉竞相绽放引来观众</a></h3>
+                                href="404.html">花博会开幕：百余品种花卉竞相绽放引来观众</a></h3>
                     </div>
                 </div>
             </div>

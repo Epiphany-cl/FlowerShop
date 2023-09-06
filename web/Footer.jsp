@@ -7,11 +7,11 @@
                 <div class="footer-widget footer-menu-widget clearfix"><h4 class="footer-title">我的账户</h4>
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="account.html">我的账户</a></li>
+                            <li><a href="myOrder.jsp">我的订单</a></li>
                             <li><a href="checkout.jsp">结账</a></li>
-                            <li><a href="contact.html">联系我们</a></li>
+                            <li><a href="404.html">联系我们</a></li>
                             <li><a href="cart.jsp">购物车</a></li>
-                            <li><a href="wishlist.html">愿望清单</a></li>
+                            <li><a href="404.html">愿望清单</a></li>
                         </ul>
                     </div>
                 </div>
@@ -20,11 +20,11 @@
                 <div class="footer-widget footer-menu-widget clearfix"><h4 class="footer-title">快速链接</h4>
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="locations.html">店铺位置</a></li>
-                            <li><a href="order-tracking.html">订单追踪</a></li>
-                            <li><a href="product-details.jsp">尺码指南</a></li>
-                            <li><a href="account.html">我的账户</a></li>
-                            <li><a href="faq.html">常见问题</a></li>
+                            <li><a href="404.html">店铺位置</a></li>
+                            <li><a href="404.html">订单追踪</a></li>
+                            <li><a href="404.html">尺码指南</a></li>
+                            <li><a href="404.html">我的账户</a></li>
+                            <li><a href="404.html">常见问题</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,9 +34,9 @@
                     <div class="footer-menu">
                         <ul>
                             <li><a href="termsOfServiceAndPrivacyPolicy.jsp">服务条款和隐私政策</a></li>
-                            <li><a href="about.html">关于我们</a></li>
-                            <li><a href="contact.html">职业机会</a></li>
-                            <li><a href="faq.html">交付信息</a></li>
+                            <li><a href="404.html">关于我们</a></li>
+                            <li><a href="404.html">职业机会</a></li>
+                            <li><a href="404.html">交付信息</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,11 +46,11 @@
                     <h4 class="footer-title">客户服务</h4>
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="product-details.jsp">运送政策</a></li>
-                            <li><a href="contact.html">帮助与联系我们</a></li>
-                            <li><a href="account.html">退货与退款</a></li>
-                            <li><a href="shop.jsp">在线商店</a></li>
-                            <li><a href="contact.html">条款和条件</a></li>
+                            <li><a href="404.html">运送政策</a></li>
+                            <li><a href="404.html">帮助与联系我们</a></li>
+                            <li><a href="404.html">退货与退款</a></li>
+                            <li><a href="shop-grid.jsp">在线商店</a></li>
+                            <li><a href="termsOfServiceAndPrivacyPolicy.jsp">条款和条件</a></li>
                         </ul>
                     </div>
                 </div>
@@ -94,10 +94,10 @@
                     </div>
                     <div class="ltn__social-media mt-20 d-none">
                         <ul>
-                            <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="404.html" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="404.html" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="404.html" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="404.html" title="Youtube"><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="footer-payment-img">
@@ -122,10 +122,10 @@
                 <div class="footer-copyright-right text-right">
                     <div class="ltn__social-media ">
                         <ul>
-                            <li><a href="#" title="Facebook"><i class="icon-social-facebook"></i></a></li>
-                            <li><a href="#" title="Twitter"><i class="icon-social-twitter"></i></a></li>
-                            <li><a href="#" title="Pinterest"><i class="icon-social-pinterest"></i></a></li>
-                            <li><a href="#" title="Instagram"><i class="icon-social-instagram"></i></a></li>
+                            <li><a href="404.html" title="Facebook"><i class="icon-social-facebook"></i></a></li>
+                            <li><a href="404.html" title="Twitter"><i class="icon-social-twitter"></i></a></li>
+                            <li><a href="404.html" title="Pinterest"><i class="icon-social-pinterest"></i></a></li>
+                            <li><a href="404.html" title="Instagram"><i class="icon-social-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>

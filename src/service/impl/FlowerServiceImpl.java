@@ -68,6 +68,7 @@ public class FlowerServiceImpl implements FlowerService {
     }
 
     @Override
+    @Deprecated
     public boolean addCartItem(Integer flowerId, Integer userId) {
         int row;
 

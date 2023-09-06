@@ -28,8 +28,8 @@
                     </div>
                     <!-- header-search-2 -->
                     <!-- 搜索 -->
-                    <div class="header-search-2">
-                        <form id="#123" method="get" action="#">
+                    <div class="header-search-2" >
+                        <form id="#123" method="get" action="404.html">
                             <input type="text" name="search" value="" placeholder="在此处搜索 . . ."/>
                             <button type="submit">
                                 <span><i class="icon-magnifier"></i></span>
@@ -111,8 +111,7 @@
                                                     <li id="header_username" style="color: red">
                                                         ${sessionScope.user.username}
                                                     </li>
-                                                    <li><a href="account.html">我的账户</a></li>
-                                                    <li><a href="wishlist.html">愿望清单</a></li>
+                                                    <li><a href="myOrder.jsp">我的订单</a></li>
                                                     <li><a href="UserServlet?method=logout">退出登录</a></li>
                                                 </c:otherwise>
                                             </c:choose>
@@ -176,84 +175,16 @@
                     <nav>
                         <div class="ltn__main-menu">
                             <ul>
-                                <li class="menu-icon"><a href="#">主页</a>
-                                    <ul>
-                                        <li><a href="index.jsp">主页样式 - 01</a></li>
-                                        <li><a href="index-2.html">主页样式 - 02</a></li>
-                                    </ul>
+                                <li class="menu-icon">
+                                    <a href="index.jsp">主页</a>
                                 </li>
-                                <li class="menu-icon"><a href="#">页面</a>
-                                    <ul class="mega-menu">
-                                        <li><a href="#">内部页面</a>
-                                            <ul>
-                                                <li><a href="portfolio.html">作品集</a></li>
-                                                <li><a href="portfolio-2.html">作品集 - 02</a></li>
-                                                <li><a href="portfolio-details.html">作品集详情</a></li>
-                                                <li><a href="portfolio-details.html">产品详细信息</a></li>
-                                                <li><a href="faq.html">常见问题</a></li>
-                                                <li><a href="locations.html">谷歌地图位置</a></li>
-                                                <li><a href="404.html">404</a></li>
-                                                <li><a href="contact.html">联系我们</a></li>
-                                                <li><a href="coming-soon.html">即将推出</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">商店页面</a>
-                                            <ul>
-                                                <li><a href="shop.jsp">商店</a></li>
-                                                <li><a href="shop-grid.jsp">商店-网格</a></li>
-                                                <li><a href="shop-left-sidebar.html">购买左侧边栏</a></li>
-                                                <li><a href="shop-right-sidebar.html">购买右侧边栏</a></li>
-                                                <li><a href="product-details.jsp">商品详情</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">新闻</a>
-                                            <ul>
-                                                <li><a href="blog.html">新闻</a></li>
-                                                <li><a href="blog-grid.html">新闻网格</a></li>
-                                                <li><a href="blog-left-sidebar.html">新闻左侧栏</a></li>
-                                                <li><a href="blog-right-sidebar.html">新闻右侧栏</a></li>
-                                                <li><a href="blog-details.html">新闻详情</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="menu-icon">
+                                    <a href="shop-grid.jsp">商店</a>
                                 </li>
-                                <li class="menu-icon"><a href="shop-grid.jsp">商店</a>
-                                    <ul>
-                                        <li><a href="shop.jsp">商店</a></li>
-                                        <li><a href="shop-grid.jsp">商店-网格</a></li>
-                                        <li><a href="shop-left-sidebar.html">购买左侧边栏</a></li>
-                                        <li><a href="shop-right-sidebar.html">购买右侧边栏</a></li>
-                                        <li><a href="product-details.jsp">商品详情</a></li>
-                                        <li><a href="#">其他页面<span class="float-right">>></span></a>
-                                            <ul>
-                                                <li><a href="cart.jsp">购物车</a></li>
-                                                <li><a href="wishlist.html">愿望清单</a></li>
-                                                <li><a href="checkout.jsp">结账</a></li>
-                                                <li><a href="order-tracking.html">订单追踪</a></li>
-                                                <li><a href="account.html">我的账户</a></li>
-                                                <li><a href="login.jsp">登录</a></li>
-                                                <li><a href="register.jsp">注册</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="menu-icon">
+                                    <a href="404.html">作品集</a>
                                 </li>
-                                <li class="menu-icon"><a href="#">作品集</a>
-                                    <ul>
-                                        <li><a href="portfolio.html">作品集</a></li>
-                                        <li><a href="portfolio-2.html">作品集 - 02</a></li>
-                                        <li><a href="portfolio-details.html">作品集详情</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-icon"><a href="#">新闻</a>
-                                    <ul>
-                                        <li><a href="blog.html">新闻</a></li>
-                                        <li><a href="blog-grid.html">新闻网格</a></li>
-                                        <li><a href="blog-left-sidebar.html">新闻左侧栏</a></li>
-                                        <li><a href="blog-right-sidebar.html">新闻右侧栏</a></li>
-                                        <li><a href="blog-details.html">新闻详情</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">联系我们</a></li>
+                                <li><a href="termsOfServiceAndPrivacyPolicy.jsp">服务条款</a></li>
                             </ul>
                         </div>
                     </nav>
