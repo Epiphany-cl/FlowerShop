@@ -1957,11 +1957,11 @@ $(function () {
                     console.log(i);//会发现该网友会有两次加载 不知道为什么
                     $ordersTable.append(
                         '<tr class="order-info">\n' +
-                        '    <td class="order-id">'+order.orderId+'</td>\n' +
-                        '    <td class="order-name">'+order.orderUsername+'</td>\n' +
-                        '    <td class="order-phone">'+order.orderPhone+'</td>\n' +
-                        '    <td class="order-address">'+order.orderAddress+'</td>\n' +
-                        '    <td class="order-price-total">$'+order.orderPriceTotal+'</td>\n' +
+                        '    <td class="order-id">' + order.orderId + '</td>\n' +
+                        '    <td class="order-name">' + order.orderUsername + '</td>\n' +
+                        '    <td class="order-phone">' + order.orderPhone + '</td>\n' +
+                        '    <td class="order-address">' + order.orderAddress + '</td>\n' +
+                        '    <td class="order-price-total">$' + order.orderPriceTotal + '</td>\n' +
                         '    <td><a href="404.html">查看详情</a></td>\n' +
                         '</tr>'
                     );

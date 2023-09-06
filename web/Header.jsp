@@ -181,9 +181,6 @@
                                 <li class="menu-icon">
                                     <a href="shop-grid.jsp">商店</a>
                                 </li>
-                                <li class="menu-icon">
-                                    <a href="404.html">作品集</a>
-                                </li>
                                 <li><a href="termsOfServiceAndPrivacyPolicy.jsp">服务条款</a></li>
                             </ul>
                         </div>

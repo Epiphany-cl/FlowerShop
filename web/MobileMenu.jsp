@@ -50,7 +50,7 @@
             <li><a href="#">页面</a>
                 <ul class="sub-menu">
                     <li><a href="about.html">关于我们</a></li>
-                    <li><a href="portfolio.html">作品集</a></li>
+                    <li><a href="portfolio.jsp">作品集</a></li>
                     <li><a href="portfolio-2.html">作品集 - 02</a></li>
                     <li><a href="portfolio-details.html">作品集详情</a></li>
                     <li><a href="faq.html">常见问题</a></li>

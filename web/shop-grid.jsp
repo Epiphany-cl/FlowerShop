@@ -72,23 +72,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="ltn__shop-options">
-                        <ul>
-                            <li>
-                                <div class="showing-product-number text-right"></div>
-                            </li>
-                            <li>
-                                <div class="short-by text-center">
-                                    <select class="nice-select">
-                                        <option>默认排序</option>
-                                        <option>按新品排序</option>
-                                        <option>按价格从低到高排序</option>
-                                        <option>按价格从高到低排序</option>
-                                    </select>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="liton_product_grid">
                             <div class="ltn__product-tab-content-inner ltn__product-grid-view">
