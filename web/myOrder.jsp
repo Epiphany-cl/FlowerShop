@@ -41,7 +41,7 @@
 
     <!-- Utilize Cart Menu Start -->
     <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">
-        <jsp:include page="cart.jsp"/>
+        <jsp:include page="CartMenu.jsp"/>
     </div>
     <!-- Utilize Cart Menu End -->
 
