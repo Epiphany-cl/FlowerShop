@@ -35,7 +35,7 @@
 
     <!-- HEADER AREA START (header-3) -->
     <header class="ltn__header-area ltn__header-3 section-bg-6">
-        <jsp:include page="CartMenu.jsp"/>
+        <jsp:include page="Header.jsp"/>
     </header>
     <!-- HEADER AREA END -->
 
