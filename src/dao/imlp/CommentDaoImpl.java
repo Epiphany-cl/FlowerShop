@@ -21,7 +21,7 @@ public class CommentDaoImpl extends BaseDao<Comment> implements CommentDao {
     @Override
     public List<Comment> getCommentByFlowerId(int flowerId) {
         return super.getBeanList(
-                "select * from t_comment where flower_id = ?;",
+                "select * from t_comment where flower_id = ? order by comment_date desc;",
                 flowerId
         );
     }
