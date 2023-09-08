@@ -1,6 +1,7 @@
 package servlet;
 
 import bean.Order;
+import bean.OrderDetailInfo;
 import bean.User;
 import com.google.gson.Gson;
 import service.OrderService;
@@ -76,6 +77,17 @@ public class OrderServlet extends BaseServlet {
         resp.setContentType("application/json;charset=utf-8");
         resp.getWriter().write(json);
 
+    }
+
+    protected void findOrderDetail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String orderId = req.getParameter("orderId");
+
+        OrderDetailInfo orderDetail = orderService.findOrderDetail(orderId);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(orderDetail);
+        resp.setContentType("application/json;charset=utf-8");
+        resp.getWriter().print(json);
     }
 }
 

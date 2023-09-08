@@ -27,4 +27,6 @@ public interface UserDao {
      * @return 返回-1 表示操作失败，其他是sql 语句影响的行数
      */
     public int saveUser(User user);
+
+    public  User queryUserByUserId(int userId);
 }

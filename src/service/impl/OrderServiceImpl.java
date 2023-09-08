@@ -1,21 +1,24 @@
 package service.impl;
 
-import bean.CartItem;
-import bean.Order;
-import bean.OrderDetail;
+import bean.*;
 import dao.CartItemDao;
+import dao.FlowerDao;
 import dao.OrderDao;
 import dao.OrderDetailDao;
 import dao.imlp.CartItemDaoImpl;
+import dao.imlp.FlowerDaoImpl;
 import dao.imlp.OrderDaoImpl;
 import dao.imlp.OrderDetailDaoImpl;
+import org.junit.Test;
 import service.OrderService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 public class OrderServiceImpl implements OrderService {
+    private final FlowerDao flowerDao = new FlowerDaoImpl();
     private final OrderDao orderDao = new OrderDaoImpl();
     private final CartItemDao cartItemDao = new CartItemDaoImpl();
     private final OrderDetailDao orderDetailDao = new OrderDetailDaoImpl();
@@ -61,6 +64,54 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Order> findAllOrder(int userId) {
         return orderDao.getAllOrder(userId);
+    }
+
+    @Override
+    public OrderDetailInfo findOrderDetail(String orderId) {
+        List<OrderDetail> orderDetails = orderDetailDao.getOrderDetailsByOrderId(orderId);
+
+
+        List<CartItem> items = new ArrayList<>();
+
+        double priceTotal = 0d;
+
+        for (OrderDetail orderDetail : orderDetails) {
+            Integer flowerId = orderDetail.getFlowerId();
+
+
+            Flower flowerInfo = flowerDao.getFlowerById(flowerId);
+            String flowerName = flowerInfo.getFlowerName();
+            Integer flowerNum = orderDetail.getFlowerNum();
+            Double sellingPrice = flowerInfo.getSellingPrice();
+
+            CartItem cartItem = new CartItem();
+            cartItem.setFlowerId(flowerId);
+            cartItem.setFlowerName(flowerName);
+            cartItem.setFlowerNumber(flowerNum);
+            cartItem.setFlowerPrice(sellingPrice);
+
+            items.add(cartItem);
+
+            priceTotal += flowerNum * sellingPrice;
+
+        }
+
+        if (priceTotal < 49){
+            priceTotal += 15d;
+        }
+
+        OrderDetailInfo orderDetailInfo = new OrderDetailInfo();
+        orderDetailInfo.setOrderId(orderId);
+        orderDetailInfo.setItems(items);
+        orderDetailInfo.setPriceTotal(priceTotal);
+
+        return orderDetailInfo;
+    }
+
+    @Test
+    public void findOrderDetail() {
+        OrderDetailInfo orderDetail = new OrderServiceImpl().findOrderDetail("f8f968c92696438");
+        System.out.println(orderDetail);
     }
 
     //随机生成订单号

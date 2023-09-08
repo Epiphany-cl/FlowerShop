@@ -24,4 +24,12 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
                 user.getEmail(),
                 user.getPassword());
     }
+
+    @Override
+    public User queryUserByUserId(int userId) {
+        return super.getBean(
+                "select * from t_user where id = ?;",
+                userId
+        );
+    }
 }
