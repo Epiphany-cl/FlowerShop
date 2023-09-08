@@ -96,6 +96,10 @@ public class OrderServiceImpl implements OrderService {
 
         }
 
+        if (priceTotal < 49){
+            priceTotal += 15d;
+        }
+
         OrderDetailInfo orderDetailInfo = new OrderDetailInfo();
         orderDetailInfo.setOrderId(orderId);
         orderDetailInfo.setItems(items);

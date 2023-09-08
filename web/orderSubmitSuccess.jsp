@@ -75,7 +75,7 @@
                     <td class="order-phone">XXX</td>
                     <td class="order-address">XXX-XXX-XXX</td>
                     <td class="order-price-total">$XXX</td>
-                    <td><a href="404.html">查看详情</a></td>
+                    <td><a href="javascript:void(0)">查看详情</a></td>
                 </tr>
                 </tbody>
             </table>

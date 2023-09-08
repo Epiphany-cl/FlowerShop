@@ -203,7 +203,7 @@
                         <div class="ltn__shop-details-tab-menu">
                             <div class="nav">
                                 <a class="active show" data-toggle="tab" href="#liton_tab_details_1_1">描述</a>
-                                <!-- <a data-toggle="tab" href="#liton_tab_details_1_3" class="">Comments</a> -->
+                                <a data-toggle="tab" href="#liton_tab_details_1_3" class="">评论</a>
                                 <a data-toggle="tab" href="#liton_tab_details_1_4" class="">运输</a>
                                 <!-- <a data-toggle="tab" href="#liton_tab_details_1_5" class="">Size Chart</a> -->
                             </div>
@@ -236,6 +236,58 @@
                                     </p>
                                 </div>
                             </div>
+
+                            <%--评论--%>
+                            <div class="tab-pane fade" id="liton_tab_details_1_3">
+                                <!-- comment-area -->
+                                <div class="ltn__comment-area mb-30">
+                                    <h4 class="title-2">评论 (<span class="product-comments">1</span>)</h4>
+                                    <div class="ltn__comment-inner">
+                                        <ul>
+                                            <li>
+                                                <div class="ltn__comment-item clearfix">
+                                                    <div class="ltn__commenter-img">
+                                                        <img src="img/testimonial/1.jpg" alt="Image">
+                                                    </div>
+                                                    <div class="ltn__commenter-comment">
+                                                        <h6><a>朝花夕拾</a></h6>
+                                                        <span class="comment-date">2023年9月8日11:30</span>
+                                                        <p>
+                                                            味道很好，孩子很爱吃。
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- comment-reply -->
+                                <%--<div class="ltn__comment-reply-area ltn__form-box mb-60">
+                                    <form action="#">
+                                        <h4 class="title-2">Leave a Reply</h4>
+                                        <div class="input-item input-item-textarea ltn__custom-icon">
+                                            <textarea placeholder="Type your comments...."></textarea>
+                                        </div>
+                                        <div class="input-item input-item-name ltn__custom-icon">
+                                            <input type="text" placeholder="Type your name....">
+                                        </div>
+                                        <div class="input-item input-item-email ltn__custom-icon">
+                                            <input type="email" placeholder="Type your email....">
+                                        </div>
+                                        <div class="input-item input-item-website ltn__custom-icon">
+                                            <input type="text" name="website" placeholder="Type your website....">
+                                        </div>
+                                        <label class="mb-0"><input type="checkbox" name="agree"> Save my name, email,
+                                            and website in this browser for the next time I comment.</label>
+                                        <div class="btn-wrapper">
+                                            <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit"><i
+                                                    class="far fa-comments"></i> Post Comment
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>--%>
+                            </div>
+
                             <div class="tab-pane fade" id="liton_tab_details_1_4"><h4 class="title-2">
                                 我们商店的运输政策</h4>
                                 <p>

@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ltn__breadcrumb-inner text-center">
-                        <h1 class="ltn__page-title">我的订单</h1>
+                        <h1 class="ltn__page-title">订单详情</h1>
                         <div class="ltn__breadcrumb-list">
                             <ul>
                                 <li><a href="index.jsp">主页</a></li>
@@ -94,16 +94,59 @@
                     <td>玫瑰</td>
                     <td>11</td>
                     <td>$ 99.00</td>
-                    <td><a href="javascript:void(0)">立即评论</a></td>
+                    <td>
+                        <a href="javascript:void(0)"
+                           onclick="setCommentModal(this)"
+                           data-toggle="modal"
+                           data-target="#comment_orderDetail"
+                        >
+                            立即评论
+                        </a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
             <h4>总价：<span class="orderDetail_priceTotal" style="color: #cd0a0a">$0.00</span></h4>
 
-
         </div>
     </div>
     <!-- WISHLIST AREA START -->
+
+    <%-- 商品评论的弹窗 --%>
+    <div class="ltn__modal-area">
+        <div class="modal fade" id="comment_orderDetail" tabindex="-1">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ltn__quick-view-modal-inner">
+                            <div class="modal-product-item">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <input type="hidden" value="0" class="orderDetail_flowerId">
+                                        <h1></h1>
+                                        <div class="input-item input-item-textarea ltn__custom-icon">
+                                            <textarea placeholder="请输入你的评论...."></textarea>
+                                        </div>
+                                        <div class="btn-wrapper">
+                                            <button onclick="submitComment()"
+                                                    class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">
+                                                <i class="far fa-comments">提交评论</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- BRAND LOGO AREA START -->
     <div class="ltn__brand-logo-area  ltn__brand-logo-1 section-bg-1 pt-35 pb-35 plr--5">

@@ -56,6 +56,7 @@
 55. cart.js 点击图片和名字进入详情页
 56. 结账 购物车信息的打印
 57. Order.jsp 提交订单
+58. 订单提交成功界面
 59. 我的订单界面
 60. 订单详情界面
 
@@ -1375,6 +1376,9 @@ $(function () {
         const urlParams = new URLSearchParams(queryString);
         const flowerId = urlParams.get("flowerId");
 
+        //刷新评论区
+        refreshComment(flowerId)
+
         // 发起 POST 请求
         $.post("FlowerServlet", "method=findFlowerDetailById&flowerId=" + flowerId, function (msg) {
             $(".pb-70 .single-large-img a").prop("href", msg.flowerImgPath);
@@ -1935,6 +1939,9 @@ function refreshOrderInfo(orderId) {
             $orderInfo.find(".order-phone").text(order.orderPhone);
             $orderInfo.find(".order-address").text(order.orderAddress);
             $orderInfo.find(".order-price-total").text("$" + order.orderPriceTotal.toFixed(2));
+            $orderInfo.find("a").click(function () {
+                window.location.href = "orderDetail.jsp?orderId=" + orderId;
+            });
         }
     );
 }
@@ -1989,20 +1996,20 @@ $(function () {
             function (msg) {
                 let priceTotal = msg.priceTotal;
                 $(".orderDetail_orderId").text(orderId);
-                $(".orderDetail_priceTotal").text("$ "+priceTotal.toFixed(2));
+                $(".orderDetail_priceTotal").text("$ " + priceTotal.toFixed(2));
 
                 let $orders = $(".orders-table");
                 $orders.html("");
                 let items = msg.items;
-                for (let i in items ) {
+                for (let i in items) {
                     let item = items[i];
                     $orders.append(
                         '<tr>\n' +
-                        '    <td>'+item.flowerId+'</td>\n' +
-                        '    <td>'+item.flowerName+'</td>\n' +
-                        '    <td>'+item.flowerNumber+'</td>\n' +
-                        '    <td>$ '+item.flowerPrice+'</td>\n' +
-                        '    <td><a href="javascript:void(0)">立即评论</a></td>\n' +
+                        '    <td>' + item.flowerId + '</td>\n' +
+                        '    <td>' + item.flowerName + '</td>\n' +
+                        '    <td>' + item.flowerNumber + '</td>\n' +
+                        '    <td>$' + item.flowerPrice + '</td>\n' +
+                        '    <td><a href="javascript:void(0)" onclick="setCommentModal(this)" data-toggle="modal" data-target="#comment_orderDetail">立即评论</a></td>\n' +
                         '</tr>'
                     );
                 }
@@ -2012,3 +2019,74 @@ $(function () {
     }
 
 });
+
+/* --------------------------------------------------------
+    61. 商品评论
+-------------------------------------------------------- */
+
+//刷新商品评论模态框数据
+function setCommentModal(a) {
+    let parents = $(a).parents("tr");
+    let flowerId = parents.find("td:eq(0)").text();
+    let flowerName = parents.find("td:eq(1)").text();
+
+    let $modal = $(".modal-product-item");
+    $modal.find(".orderDetail_flowerId").val(flowerId);
+    $modal.find("h1").text(flowerName);
+}
+
+//提交评论
+function submitComment() {
+    let $modal = $(".modal-product-item");
+    let flowerId = $modal.find(".orderDetail_flowerId").val();
+    let commentText = $modal.find(".input-item.input-item-textarea.ltn__custom-icon textarea").val();
+
+    $.post(
+        "CommentServlet",
+        "method=submitComment&flowerId=" + flowerId + "&commentText=" + commentText,
+        function () {
+            //因为没有返回是否成功 所以让子弹飞一会儿 以免数据库没有数据
+            setTimeout(function () {
+                window.location.href = "product-details.jsp?flowerId=" + flowerId;
+            }, 300);
+
+        }
+    );
+}
+
+//刷新评论区
+function refreshComment(flowerId) {
+    $.post(
+        "CommentServlet",
+        "method=findCommentByFlowerId&flowerId=" + flowerId,
+        function (msg) {
+            let $commentDiv = $("#liton_tab_details_1_3");
+
+            $commentDiv.find(".product-comments").text(msg.length);
+
+            let $commentUl = $commentDiv.find("ul");
+            $commentUl.html("");
+            for (let i in msg) {
+                let msgElement = msg[i];
+
+                let userName = msgElement.userName;
+                let commentContent = msgElement.commentContent;
+                let commentDate = msgElement.commentDate;
+
+                $commentUl.append(
+                    '<li>\n' +
+                    '    <div class="ltn__comment-item clearfix">\n' +
+                    '        <div class="ltn__commenter-comment">\n' +
+                    '            <h6><a>' + userName + '</a></h6>\n' +
+                    '            <span class="comment-date">' + commentDate + '</span>\n' +
+                    '            <p>\n' +
+                    '                ' + commentContent + '\n' +
+                    '            </p>\n' +
+                    '        </div>\n' +
+                    '    </div>\n' +
+                    '</li>'
+                );
+            }
+        }
+    );
+}
