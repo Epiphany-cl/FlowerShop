@@ -57,6 +57,7 @@
 56. 结账 购物车信息的打印
 57. Order.jsp 提交订单
 59. 我的订单界面
+60. 订单详情界面
 
 
 
@@ -1943,7 +1944,6 @@ function refreshOrderInfo(orderId) {
 -------------------------------------------------------- */
 $(function () {
     let pathname = window.location.pathname;
-    console.log(pathname);
     if (pathname.includes("myOrder.jsp")) {
         $.post(
             "OrderServlet",
@@ -1962,11 +1962,53 @@ $(function () {
                         '    <td class="order-phone">' + order.orderPhone + '</td>\n' +
                         '    <td class="order-address">' + order.orderAddress + '</td>\n' +
                         '    <td class="order-price-total">$' + order.orderPriceTotal + '</td>\n' +
-                        '    <td><a href="404.html">查看详情</a></td>\n' +
+                        '    <td><a href="orderDetail.jsp?orderId=' + order.orderId + '">查看详情</a></td>\n' +
                         '</tr>'
                     );
                 }
             }
         );
     }
+});
+
+/* --------------------------------------------------------
+    60. 订单详情界面
+-------------------------------------------------------- */
+$(function () {
+    let pathname = window.location.pathname;
+    if (pathname.includes("orderDetail.jsp")) {
+        //获得地址栏参数信息
+        let href1 = window.location.search;
+        let params1 = new URLSearchParams(href1);
+        let orderId = params1.get("orderId");
+
+        //获得订单详情的数据
+        $.post(
+            "OrderServlet",
+            "method=findOrderDetail&orderId=" + orderId,
+            function (msg) {
+                let priceTotal = msg.priceTotal;
+                $(".orderDetail_orderId").text(orderId);
+                $(".orderDetail_priceTotal").text("$ "+priceTotal.toFixed(2));
+
+                let $orders = $(".orders-table");
+                $orders.html("");
+                let items = msg.items;
+                for (let i in items ) {
+                    let item = items[i];
+                    $orders.append(
+                        '<tr>\n' +
+                        '    <td>'+item.flowerId+'</td>\n' +
+                        '    <td>'+item.flowerName+'</td>\n' +
+                        '    <td>'+item.flowerNumber+'</td>\n' +
+                        '    <td>$ '+item.flowerPrice+'</td>\n' +
+                        '    <td><a href="javascript:void(0)">立即评论</a></td>\n' +
+                        '</tr>'
+                    );
+                }
+            }
+        );
+
+    }
+
 });
