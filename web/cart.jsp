@@ -86,7 +86,7 @@
                                 <tr>
                                     <input class="data-cartId" type="hidden" value="0">
                                     <input class="data-flowerId" type="hidden" value="0">
-                                    <td class="cart-product-remove">x</td>
+                                    <td onclick="deleteCartItem(this)" class="cart-product-remove">x</td>
                                     <td class="cart-product-image">
                                         <a onclick="cartJsp_productDetailView(this)" href="javascript:void(0)"><img src="img/product/1.png" alt="#"></a>
                                     </td>

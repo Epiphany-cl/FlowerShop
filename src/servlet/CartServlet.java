@@ -41,6 +41,7 @@ public class CartServlet extends BaseServlet {
 
     protected void removeCartItem(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int cartId = WebUtils.parseInt(req.getParameter("cartId"), 0);
+        System.out.println(cartId);
         cartItemService.deleteCartItem(cartId);
     }
 

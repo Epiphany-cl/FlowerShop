@@ -16,7 +16,7 @@
 12. Product Details Page
 13. Isotope Gallery Active  ( Gallery / Portfolio )
 14. LightCase jQuery Active
-15. Slider One Active 
+15. Slider One Active
 16. Product Slider One
 17. Tab Product Slider One
 18. Blog Slider One
@@ -24,10 +24,10 @@
 20. Testimonial Slider - 2
 21. Testimonial Slider - 3
 22. Category Slider
-23. Image Slide  - 1 (Screenshot) 
+23. Image Slide  - 1 (Screenshot)
 24. Image Slide - 2
 25. Image Slide - 3
-26. Image Slide - 4 
+26. Image Slide - 4
 27. Brand Logo
 28. Blog Gallery (Blog Page )
 29. Countdown
@@ -59,7 +59,8 @@
 58. 订单提交成功界面
 59. 我的订单界面
 60. 订单详情界面
-
+61. 商品评论
+62. cart.jsp 商品删除
 
 
 
@@ -2087,6 +2088,23 @@ function refreshComment(flowerId) {
                     '</li>'
                 );
             }
+        }
+    );
+}
+
+/* --------------------------------------------------------
+    62. cart.jsp 商品删除
+-------------------------------------------------------- */
+function deleteCartItem(a) {
+    let parents = $(a).parents("tr");
+    let cartId = parents.find("input:eq(0)").val();
+
+    $.post(
+        "CartServlet",
+        "method=removeCartItem&cartId=" + cartId,
+        function () {
+           //刷新购物车
+            cartJsp_RefreshCartInfo();
         }
     );
 }
