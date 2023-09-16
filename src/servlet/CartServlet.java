@@ -3,7 +3,6 @@ package servlet;
 import bean.CartItem;
 import bean.User;
 import com.google.gson.Gson;
-import dao.CartItemDao;
 import service.CartItemService;
 import service.FlowerService;
 import service.impl.CartItemServiceImpl;
@@ -41,7 +40,6 @@ public class CartServlet extends BaseServlet {
 
     protected void removeCartItem(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int cartId = WebUtils.parseInt(req.getParameter("cartId"), 0);
-        System.out.println(cartId);
         cartItemService.deleteCartItem(cartId);
     }
 

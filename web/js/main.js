@@ -47,7 +47,8 @@
 43. header.jsp(<sup>3</sup>) CartMenu.jsp购物车信息刷新显示
 44. 购物车移除商品
 45. 购物车点击图片进产品详情页
-46. 商店界面的快速添加购物车
+46. 商店界面的产品展示
+47. 商店界面的快速添加购物车
 48. shop-grid.jsp界面快速查看
 49. shop-grid.jsp界面 上一页下一页
 50. shop-grid.jsp 点击图片和标题进入商品详情
@@ -1281,7 +1282,7 @@ $(function () {
         $.post("UserServlet", "method=loginUser&email=" + $loginInputEmail.val() + "&password=" + $loginInputPassword.val(), function (msg) {
             console.log(JSON.stringify(msg))
             if (JSON.stringify(msg) === "false") {
-                $loginError.html("密码错误！")
+                $loginError.html("用户名或密码错误！")
             } else {
                 window.location.href = "index.jsp";
             }
@@ -1601,7 +1602,7 @@ function showFlowers(pageNo, pageSize) {
 }
 
 /* --------------------------------------------------------
-    46. 商店界面的快速添加购物车
+    47. 商店界面的快速添加购物车
 -------------------------------------------------------- */
 function quickAddCartShop(a) {
     //判断是否登录
