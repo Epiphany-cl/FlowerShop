@@ -28,7 +28,7 @@
                     </div>
                     <!-- header-search-2 -->
                     <!-- 搜索 -->
-                    <div class="header-search-2" >
+                    <div class="header-search-2 d-none" >
                         <form id="#123" method="get" action="404.html">
                             <input type="text" name="search" value="" placeholder="在此处搜索 . . ."/>
                             <button type="submit">

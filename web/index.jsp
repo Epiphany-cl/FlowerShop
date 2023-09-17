@@ -823,4 +823,19 @@
 
 </body>
 </html>
+<%--
+<script>
+    $(function (){
+        for (let i = 0; i < 100; i++) {
+            $.post(
+                "FlowerServlet",
+                "method=findFlowers",
+                function (msg){
+                    console.log(msg)
+                }
+            )
+        }
+    })
+</script>
+--%>
 

@@ -13,7 +13,7 @@ import utils.Page;
 
 import java.util.List;
 
-public class FlowerServiceImpl implements FlowerService {
+public  class  FlowerServiceImpl implements FlowerService {
     private final FlowerDaoImpl flowerDao = new FlowerDaoImpl();
     private final FlowerDetailDao flowerDetailDao = new FlowerDetailDaoImpl();
     private final CartItemDao cartItemDao = new CartItemDaoImpl();
@@ -29,7 +29,7 @@ public class FlowerServiceImpl implements FlowerService {
     }
 
     @Override
-    public Page<Flower> getFlowersByPage(int pageNo, int pageSize) {
+    public  Page<Flower> getFlowersByPage(int pageNo, int pageSize) {
         Page<Flower> flowerPage = new Page<>();
         flowerPage.setPageNo(pageNo);
         flowerPage.setPageSize(pageSize);

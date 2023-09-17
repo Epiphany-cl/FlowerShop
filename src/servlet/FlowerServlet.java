@@ -21,7 +21,7 @@ import java.io.IOException;
 public class FlowerServlet extends BaseServlet {
     private final FlowerService flowerService = new FlowerServiceImpl();
 
-    protected void findFlowers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected /*synchronized*/ void findFlowers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int pageNo = WebUtils.parseInt(req.getParameter("pageNo"), 1);
         int pageSize = WebUtils.parseInt(req.getParameter("pageSize"), Page.PAGE_SIZE);
         Page<Flower> flowersByPage = flowerService.getFlowersByPage(pageNo, pageSize);

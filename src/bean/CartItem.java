@@ -1,7 +1,5 @@
 package bean;
 
-import java.math.BigDecimal;
-
 public class CartItem {
     private Integer cartId;
     private Integer flowerId;
